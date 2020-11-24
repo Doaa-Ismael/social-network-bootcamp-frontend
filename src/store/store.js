@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import { messageReducer, messageInitialState } from './message';
-import { authReducer, authInitialState } from './auth';
+import React, { createContext, useContext, useReducer } from "react";
+import { authInitialState, authReducer } from "./auth";
 
 /**
  * React context for store
@@ -11,7 +10,6 @@ const StoreContext = createContext();
  * Combine initial states
  */
 const store = {
-  message: messageInitialState,
   auth: authInitialState,
 };
 
@@ -19,7 +17,6 @@ const store = {
  * Combine reducers
  */
 const reducers = (store, action) => ({
-  message: messageReducer(store.message, action),
   auth: authReducer(store.auth, action),
 });
 
@@ -27,7 +24,9 @@ const reducers = (store, action) => ({
  * Store context provider
  */
 export const StoreProvider = ({ children }) => (
-  <StoreContext.Provider value={useReducer(reducers, store)}>{children}</StoreContext.Provider>
+  <StoreContext.Provider value={useReducer(reducers, store)}>
+    {children}
+  </StoreContext.Provider>
 );
 
 /**

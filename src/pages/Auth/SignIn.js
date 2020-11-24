@@ -1,7 +1,7 @@
 import { UserAPI } from "api";
 import { Button, InputText } from "components/Form";
 import { Spacing } from "components/Layout";
-import { A, Error } from "components/Text";
+import { Error } from "components/Text";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
@@ -23,12 +23,6 @@ const InputContainer = styled(Spacing)`
 const ErrorMessage = styled.div`
   position: absolute;
   top: 1px;
-`;
-
-const ForgotPassword = styled.div`
-  font-size: ${(p) => p.theme.font.size.xxs};
-  margin-top: ${(p) => p.theme.spacing.xxs};
-  color: ${(p) => p.theme.colors.white};
 `;
 
 /**
@@ -103,9 +97,6 @@ const SignIn = ({ history, location, refetch }) => {
             placeholder="Password"
             borderColor="white"
           />
-          <A to={Routes.FORGOT_PASSWORD}>
-            <ForgotPassword>Forgot password?</ForgotPassword>
-          </A>
         </InputContainer>
 
         <Button disabled={loading}>Log in</Button>

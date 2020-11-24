@@ -1,18 +1,13 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { withRouter } from "react-router-dom";
-import { useMutation } from "@apollo/client";
-
-import { Spacing, Container } from "components/Layout";
-import { H1, Error } from "components/Text";
-import { InputText, Button } from "components/Form";
-import Head from "components/Head";
-
-import { SIGN_UP } from "graphql/user";
-
-import * as Routes from "routes";
 import { UserAPI } from "api";
+import { Button, InputText } from "components/Form";
+import Head from "components/Head";
+import { Container, Spacing } from "components/Layout";
+import { Error, H1 } from "components/Text";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import * as Routes from "routes";
+import styled from "styled-components";
 
 const Root = styled(Container)`
   display: flex;
