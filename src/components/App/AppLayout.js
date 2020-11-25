@@ -26,7 +26,9 @@ const Root = styled.div`
 const AppLayout = ({ authUser }) => {
   return (
     <Root>
-      <p>Logged In as {authUser.fullName}</p>
+      <p>
+        Logged In as {authUser.fullName}: {authUser.bio}
+      </p>
       <SignOut />
     </Root>
   );
